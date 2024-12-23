@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Северная дирекция инфраструктуры</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+    
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        };
+    </script>    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Северная дирекция инфраструктуры "РЖД"</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="projects.html">Проекты</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="dark-bg-wrapper">
+            <section id="hero">
+                <div class="container">
+                    <h2>Управление железнодорожной инфраструктурой</h2>
+                    <p>Ключ к безопасности и эффективности.</p>
+                    <img class="img" src="img1.jpg" alt="#">
+                    <div class="button-group">
+                        <button onclick="openModal('about-modal')">О компании</button>
+                        <button onclick="openModal('office-modal')">Офис</button>
+                        <button onclick="openModal('team-modal')">Команда</button>
+                    </div>
+                </div>
+                <div id="about-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('about-modal')">&times;</span>
+                        <h3>О компании</h3>
+                        <p>Северная дирекция инфраструктуры является подразделением Центральной дирекции инфраструктуры – филиала ОАО «РЖД». Мы занимаемся управлением, ремонтом и модернизацией железнодорожной инфраструктуры для обеспечения надежности и безопасности.</p>
+                    </div>
+                </div>
+                
+                <div id="office-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('office-modal')">&times;</span>
+                        <h3>Офис</h3>
+                        <p>Наш офис находится в Ярославле, на Волжской набережной, 59. Это современное пространство для управления проектами и взаимодействия с партнерами.</p>
+                    </div>
+                </div>
+                
+                <div id="team-modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal('team-modal')">&times;</span>
+                        <h3>Команда</h3>
+                        <p>Наша команда состоит из высококвалифицированных специалистов в области управления инфраструктурой, инженеров, планировщиков и логистов. Все они работают над реализацией надежных решений для железнодорожной сети.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Северная дирекция инфраструктуры. Все права защищены.</p>
+        </div>
+    </footer>    
+</body>
+</html>

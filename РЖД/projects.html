@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проекты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Наши проекты</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="projects.html">Проекты</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="container">
+                <h2>Реализованные проекты</h2>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <article class="dark-bg-wrapper">
+                            <h3>Модернизация железнодорожного моста в 2023 году </h3>
+                            <img class="placeholder" src="img4.jpg" alt="#">
+                        </article>
+                        <article class="dark-bg-wrapper">
+                            <h3>Реконструкция путей в Ярославле</h3>
+                            <img class="placeholder" src="img5.jpg" alt="#">
+                        </article>
+                        <article class="dark-bg-wrapper">
+                            <h3>Обновление системы сигнализации</h3>
+                            <img class="placeholder" src="img6.jpg" alt="#">
+                        </article>
+                    </div>
+                    <button class="carousel-button prev">❮</button>
+                    <button class="carousel-button next">❯</button>
+                </div>
+            </div>
+        </section>      
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Северная дирекция инфраструктуры. Все права защищены.</p>
+        </div>
+    </footer>
+    <script>
+        const track = document.querySelector('.carousel-track');
+        const prevButton = document.querySelector('.carousel-button.prev');
+        const nextButton = document.querySelector('.carousel-button.next');
+
+        let currentIndex = 0;
+
+        function updateCarousel() {
+            const width = track.children[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${currentIndex * width}px)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? track.children.length - 1 : currentIndex - 1;
+            updateCarousel();
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex === track.children.length - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        });
+
+        window.addEventListener('resize', updateCarousel);
+    </script>
+</body>
+</html>
